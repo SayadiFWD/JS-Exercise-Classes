@@ -41,9 +41,21 @@ class Airplane {
 */
 
 class Person {
-
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+  }
+  eat() {
+    this.stomach = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  }
+  poop() {
+    this.stomach = [];
+  }
+  toString() {
+    return `${this.name}, ${this.age}`;
+  }
 }
-
 /*
   TASK 2
     - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
@@ -58,10 +70,23 @@ class Person {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
+
 class Car {
-
+  constructor(model, milesPerGallon) {
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
+  }
+  fill() {
+    this.tank++;
+  }
+  drive() {
+    this.odometer++;
+    this.tank--;
+    return `I ran out of fuel at ${this.odometer} miles!`;
+  }
 }
-
 /*
   TASK 3
     - Write a Lambdasian class.
